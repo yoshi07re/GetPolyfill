@@ -1,0 +1,68 @@
+<head>
+  <script>
+    function getPolyfill(src, integrity) {
+      var script = document.createElement('script')
+      script.src = src
+      script.integrity = integrity
+      script.crossOrigin = 'anonymous'
+      script.defer = true
+      document.head.appendChild(script)
+    }
+  </script>
+  <script
+    src="https://polyfill.io/v3/polyfill.min.js?features=es6"
+    integrity="sha384-bF2gXog8EbftpjuWQY8G0T7aeq+FvNU9YWvxSRHybqv2F/lvV5msKMHvRgoukeQP"
+    crossorigin="anonymous"
+    defer
+  ></script>
+  <script>
+    if (!window.HTMLPictureElement) {
+      getPolyfill(
+        'https://cdn.jsdelivr.net/npm/picturefill@3.0.3/dist/picturefill.min.js',
+        'sha384-xRa5B8rCDfdg0npZcxAh+RXswrbFk3g6dlHVeABeluN8EIwdyljz/LqJgc2R3KNA'
+      )
+    }
+  </script>
+  <script>
+    if (!window.HTMLDetailsElement) {
+      getPolyfill(
+        'https://cdn.jsdelivr.net/npm/details-polyfill@1.2.0/index.min.js',
+        'sha384-jJ7h+2ScofrAbudM9fmyeWVZUV/uXyILkmbAJ4qbqAMD0wqeQJt+w1F1UUgITpjP'
+      )
+    }
+  </script>
+  <script>
+    if (window.MSInputMethodContext && document.documentMode) {
+      getPolyfill(
+        'https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js',
+        'sha384-sfNEaNjsWWTLr8SImy9+sgbCBGDe/6j63dIyzhAsdwS/aQtjLfvZPltbcN2KGkjI'
+      )
+    }
+  </script>
+  <script>
+    try {
+      document.querySelector(':focus-visible')
+    } catch (error) {
+      getPolyfill(
+        'https://cdn.jsdelivr.net/npm/focus-visible@5.2.0/dist/focus-visible.min.js',
+        'sha384-xRa5B8rCDfdg0npZcxAh+RXswrbFk3g6dlHVeABeluN8EIwdyljz/LqJgc2R3KNA'
+      )
+    }
+  </script>
+  <script>
+    if (!('objectFit' in document.documentElement.style)) {
+      getPolyfill(
+        'https://cdn.jsdelivr.net/npm/object-fit-images@3.2.4/dist/ofi.min.js',
+        'sha384-GOTasnp7a/eSjnwcNDne3AqLTCR1Ax6dwWrZsPhBvSGDwp6XkOyJ2dTvSM2IGOnE'
+      )
+    }
+  </script>
+  <script>
+    if (!('inert' in document.documentElement)) {
+      getPolyfill(
+        'https://cdn.jsdelivr.net/npm/wicg-inert@3.1.0/dist/inert.min.js',
+        'sha384-RkY5SwIRNwK/U6yj2dNeFxYJEA1FjwffakxeSJvsggmMidmbsCrH4PJ/799+3qMb'
+      )
+    }
+  </script>
+</head>
